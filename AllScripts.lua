@@ -22,6 +22,10 @@ elseif game.PlaceId == "70501379" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/TradeHangout.lua"))()
 elseif game.PlaceId == "54865335" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/UltimateDriving.lua"))()
+elseif game.PlaceId == "7993293100" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/TsunamiGame.lua"))()
+elseif game.PlaceId == "8884433153" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/CollectAllPets.lua"))()
 elseif game.PlaceId == "7860844204" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/vfvo/life-sentence/main/lifesentence.lua"))()
 elseif game.PlaceId == "8328351891" then
