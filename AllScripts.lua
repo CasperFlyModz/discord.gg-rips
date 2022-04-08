@@ -42,4 +42,6 @@ elseif game.PlaceId == "4872321990" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Mxxss/RBLX-Scripts/main/Islands.lua"))()
 elseif game.PlaceId == "6783611814" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/Mxxss/RBLX-Scripts/main/Build%20a%20Boat%20to%20Survive.lua"))()
+elseif game.PlaceId == "8382553377" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/BoomSimulator.lua"))()
 end
