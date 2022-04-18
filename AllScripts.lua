@@ -50,4 +50,8 @@ elseif game.PlaceId == "8044403176" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/VehicleChampions.lua"))()
 elseif game.PlaceId == "6679274937" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/VansWorld.lua"))()
+elseif game.PlaceId == "4566572536" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/VehicleLegends.lua"))()
+elseif game.PlaceId == "9203864304" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/raiseafloppa.lua"))()
 end
