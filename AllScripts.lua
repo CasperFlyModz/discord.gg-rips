@@ -54,8 +54,12 @@ elseif game.PlaceId == "4566572536" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/VehicleLegends.lua"))()
 elseif game.PlaceId == "9203864304" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/raiseafloppa.lua"))()
+elseif game.PlaceId == "189707" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/NaturalDisasterSurvival.lua"))()
 elseif game.PlaceId == "8528736393" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/Beatland.lua"))()
 elseif game.PlaceId == "3351674303" then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/DrivingEmpire.lua"))()
+elseif game.PlaceId == "6677985923" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/MillionaireEmpireTycoon.lua"))()
 end
