@@ -61,36 +61,36 @@ local function CheckIfBad(Instance)
                 Instance:Destroy()
             end
         elseif table.find(CanBeEnabled, Instance.ClassName) then
-            if _G.Settings.Other["No Particles"] or _G.Settings["No Particles"] then
+            if _G.Settings["No Particles"] or (_G.Settings.Other and _G.Settings.Other["No Particles"]) then
                 Instance.Enabled = false
             end
         elseif Instance:IsA("Explosion") then
-            if _G.Settings.Other["No Explosions"] or _G.Settings["No Explosions"] then
+            if _G.Settings["No Explosions"] or (_G.Settings.Other and _G.Settings.Other["No Explosions"]) then
                 Instance.Visible = false
             end
         elseif Instance:IsA("Clothing") then
-            if _G.Settings.Other["No Clothes"] or _G.Settings["No Clothes"] then
+            if _G.Settings["No Clothes"] or (_G.Settings.Other and _G.Settings.Other["No Clothes"]) then
                 Instance:Destroy()
             end
         elseif Instance:IsA("BasePart") then
-            if _G.Settings.Other["Low Quality Parts"] or _G.Settings["Low Quality Parts"] then
+            if _G.Settings["Low Quality Parts"] or (_G.Settings.Other and _G.Settings.Other["Low Quality Parts"]) then
                 Instance.Material = Enum.Material.Plastic
                 Instance.Reflectance = 0
             end
         end
     end
 end
-if _G.Settings.Other["Low Water Graphics"] or _G.Settings["Low Water Graphics"] then
+if _G.Settings["Low Water Graphics"] or (_G.Settings.Other and _G.Settings.Other["Low Water Graphics"]) then
     workspace:FindFirstChildOfClass("Terrain").WaterWaveSize = 0
     workspace:FindFirstChildOfClass("Terrain").WaterWaveSpeed = 0
     workspace:FindFirstChildOfClass("Terrain").WaterReflectance = 0
     workspace:FindFirstChildOfClass("Terrain").WaterTransparency = 0
 end
-if _G.Settings.Other["No Shadows"] or _G.Settings["No Shadows"] then
+if _G.Settings["No Shadows"] or (_G.Settings.Other and _G.Settings.Other["No Shadows"]) then
     game:GetService("Lighting").GlobalShadows = false
     game:GetService("Lighting").FogEnd = 9e9
 end
-if _G.Settings.Other["Low Rendering"] or _G.Settings["Low Rendering"] then
+if _G.Settings["Low Rendering"] or (_G.Settings.Other and _G.Settings.Other["Low Rendering"]) then
     settings().Rendering.QualityLevel = 1
 end
 game:GetService("StarterGui"):SetCore("SendNotification", {
