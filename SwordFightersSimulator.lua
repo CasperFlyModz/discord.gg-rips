@@ -1,4 +1,5 @@
---Boronide™ Obfuscation, v0.6.4
+-- SCRIPT MADE BY RIP#6666
+-- DISCORD: https://discord.gg/rips
 
 local J,N,s=nil,nil,nil([[
 
