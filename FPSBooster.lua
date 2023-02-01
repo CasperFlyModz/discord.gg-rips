@@ -1,4 +1,5 @@
 local Players = game:GetService("Players")
+local ME = Players.LocalPlayer
 local BadInstances = {"DataModelMesh", "FaceInstance", "ParticleEmitter", "Trail", "Smoke", "Fire", "Sparkles", "PostEffect", "Explosion", "Clothing", "BasePart"}
 local CanBeEnabled = {"ParticleEmitter", "Trail", "Smoke", "Fire", "Sparkles", "PostEffect"}
 local function PartOfCharacter(Instance)
