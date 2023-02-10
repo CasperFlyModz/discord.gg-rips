@@ -117,7 +117,7 @@ local function ReturnDescendants()
         end
     elseif _G.Settings.Players["Ignore Me"] and _G.Settings.Players["Ignore Others"] then
         for i, v in pairs(game:GetDescendants()) do
-            if not v:IsDescendantOf(Players) then
+            if not v:IsDescendantOf(Players) and not v:IsDescendantOf(ME.Character) and not PartOfCharacter(v) then
                 for i2, v2 in pairs(BadInstances) do
                     if v:IsA(v2) then
                         table.insert(Descendants, v)
