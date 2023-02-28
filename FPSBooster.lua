@@ -1,40 +1,5 @@
--- SCRIPT MADE BY RIP#6666
--- DISCORD: https://discord.gg/rips
-
-
-
---[[
-	
-
-
-DDDDDDDDDDDDD      IIIIIIIIII   SSSSSSSSSSSSSSS         CCCCCCCCCCCCC     OOOOOOOOO     RRRRRRRRRRRRRRRRR   DDDDDDDDDDDDD                        GGGGGGGGGGGGG        GGGGGGGGGGGGG               ///////RRRRRRRRRRRRRRRRR   IIIIIIIIIIPPPPPPPPPPPPPPPPP      SSSSSSSSSSSSSSS 
-D::::::::::::DDD   I::::::::I SS:::::::::::::::S     CCC::::::::::::C   OO:::::::::OO   R::::::::::::::::R  D::::::::::::DDD                  GGG::::::::::::G     GGG::::::::::::G              /:::::/ R::::::::::::::::R  I::::::::IP::::::::::::::::P   SS:::::::::::::::S
-D:::::::::::::::DD I::::::::IS:::::SSSSSS::::::S   CC:::::::::::::::C OO:::::::::::::OO R::::::RRRRRR:::::R D:::::::::::::::DD              GG:::::::::::::::G   GG:::::::::::::::G             /:::::/  R::::::RRRRRR:::::R I::::::::IP::::::PPPPPP:::::P S:::::SSSSSS::::::S
-DDD:::::DDDDD:::::DII::::::IIS:::::S     SSSSSSS  C:::::CCCCCCCC::::CO:::::::OOO:::::::ORR:::::R     R:::::RDDD:::::DDDDD:::::D            G:::::GGGGGGGG::::G  G:::::GGGGGGGG::::G            /:::::/   RR:::::R     R:::::RII::::::IIPP:::::P     P:::::PS:::::S     SSSSSSS
-  D:::::D    D:::::D I::::I  S:::::S             C:::::C       CCCCCCO::::::O   O::::::O  R::::R     R:::::R  D:::::D    D:::::D          G:::::G       GGGGGG G:::::G       GGGGGG           /:::::/      R::::R     R:::::R  I::::I    P::::P     P:::::PS:::::S            
-  D:::::D     D:::::DI::::I  S:::::S            C:::::C              O:::::O     O:::::O  R::::R     R:::::R  D:::::D     D:::::D        G:::::G              G:::::G                        /:::::/       R::::R     R:::::R  I::::I    P::::P     P:::::PS:::::S            
-  D:::::D     D:::::DI::::I   S::::SSSS         C:::::C              O:::::O     O:::::O  R::::RRRRRR:::::R   D:::::D     D:::::D        G:::::G              G:::::G                       /:::::/        R::::RRRRRR:::::R   I::::I    P::::PPPPPP:::::P  S::::SSSS         
-  D:::::D     D:::::DI::::I    SS::::::SSSSS    C:::::C              O:::::O     O:::::O  R:::::::::::::RR    D:::::D     D:::::D        G:::::G    GGGGGGGGGGG:::::G    GGGGGGGGGG        /:::::/         R:::::::::::::RR    I::::I    P:::::::::::::PP    SS::::::SSSSS    
-  D:::::D     D:::::DI::::I      SSS::::::::SS  C:::::C              O:::::O     O:::::O  R::::RRRRRR:::::R   D:::::D     D:::::D        G:::::G    G::::::::GG:::::G    G::::::::G       /:::::/          R::::RRRRRR:::::R   I::::I    P::::PPPPPPPPP        SSS::::::::SS  
-  D:::::D     D:::::DI::::I         SSSSSS::::S C:::::C              O:::::O     O:::::O  R::::R     R:::::R  D:::::D     D:::::D        G:::::G    GGGGG::::GG:::::G    GGGGG::::G      /:::::/           R::::R     R:::::R  I::::I    P::::P                   SSSSSS::::S 
-  D:::::D     D:::::DI::::I              S:::::SC:::::C              O:::::O     O:::::O  R::::R     R:::::R  D:::::D     D:::::D        G:::::G        G::::GG:::::G        G::::G     /:::::/            R::::R     R:::::R  I::::I    P::::P                        S:::::S
-  D:::::D    D:::::D I::::I              S:::::S C:::::C       CCCCCCO::::::O   O::::::O  R::::R     R:::::R  D:::::D    D:::::D          G:::::G       G::::G G:::::G       G::::G    /:::::/             R::::R     R:::::R  I::::I    P::::P                        S:::::S
-DDD:::::DDDDD:::::DII::::::IISSSSSSS     S:::::S  C:::::CCCCCCCC::::CO:::::::OOO:::::::ORR:::::R     R:::::RDDD:::::DDDDD:::::D            G:::::GGGGGGGG::::G  G:::::GGGGGGGG::::G   /:::::/            RR:::::R     R:::::RII::::::IIPP::::::PP          SSSSSSS     S:::::S
-D:::::::::::::::DD I::::::::IS::::::SSSSSS:::::S   CC:::::::::::::::C OO:::::::::::::OO R::::::R     R:::::RD:::::::::::::::DD    ......    GG:::::::::::::::G   GG:::::::::::::::G  /:::::/             R::::::R     R:::::RI::::::::IP::::::::P          S::::::SSSSSS:::::S
-D::::::::::::DDD   I::::::::IS:::::::::::::::SS      CCC::::::::::::C   OO:::::::::OO   R::::::R     R:::::RD::::::::::::DDD      .::::.      GGG::::::GGG:::G     GGG::::::GGG:::G /:::::/              R::::::R     R:::::RI::::::::IP::::::::P          S:::::::::::::::SS 
-DDDDDDDDDDDDD      IIIIIIIIII SSSSSSSSSSSSSSS           CCCCCCCCCCCCC     OOOOOOOOO     RRRRRRRR     RRRRRRRDDDDDDDDDDDDD         ......         GGGGGG   GGGG        GGGGGG   GGGG///////               RRRRRRRR     RRRRRRRIIIIIIIIIIPPPPPPPPPP           SSSSSSSSSSSSSSS  
-
-
-
-
-]]
-
-
-
-
-
-
-
+-- MADE BY RIP#6666
+-- send issues or suggestions to my discord: discord.gg/rips
 
 
 
@@ -78,7 +43,7 @@ local BadInstances = {"DataModelMesh", "FaceInstance", "ParticleEmitter", "Trail
 local CanBeEnabled = {"ParticleEmitter", "Trail", "Smoke", "Fire", "Sparkles", "PostEffect"}
 local function PartOfCharacter(Instance)
     for i, v in pairs(Players:GetPlayers()) do
-        if v.Character and Instance:IsDescendantOf(v.Character) then
+        if v ~= ME and v.Character and Instance:IsDescendantOf(v.Character) then
             return true
         end
     end
@@ -117,7 +82,7 @@ local function ReturnDescendants()
         end
     elseif _G.Settings.Players["Ignore Me"] and _G.Settings.Players["Ignore Others"] then
         for i, v in pairs(game:GetDescendants()) do
-            if not v:IsDescendantOf(Players) and not v:IsDescendantOf(ME.Character) and not PartOfCharacter(v) then
+            if not v:IsDescendantOf(Players) and not PartOfCharacter(v) and not v:IsDescendantOf(ME.Character) then
                 for i2, v2 in pairs(BadInstances) do
                     if v:IsA(v2) then
                         table.insert(Descendants, v)
@@ -147,7 +112,7 @@ local function ReturnDescendants()
     return Descendants
 end
 local function CheckIfBad(Instance)
-    if not Instance:IsDescendantOf(Players) and not PartOfCharacter(Instance) then
+    if not Instance:IsDescendantOf(Players) --[[and not PartOfCharacter(Instance)]] and (_G.Settings.Players["Ignore Others"] and not PartOfCharacter(v) or not _G.Settings.Players["Ignore Others"]) and (_G.Settings.Players["Ignore Me"] and ME.Character and not v:IsDescendantOf(ME.Character) or not _G.Settings.Players["Ignore Me"]) then
         if Instance:IsA("DataModelMesh") then
             if _G.Settings.Meshes.LowDetail then
                 sethiddenproperty(Instance, "LODX", Enum.LevelOfDetailSetting.Low)
@@ -282,9 +247,9 @@ StarterGui:SetCore("SendNotification", {
 warn("Checking " .. #Descendants .. " Instances...")
 for i, v in pairs(Descendants) do
     CheckIfBad(v)
-    print("Loaded " .. i .. "/" .. #Descendants)
     if i == WaitNumber then
         task.wait()
+        print("Loaded " .. i .. "/" .. #Descendants)
         WaitNumber = WaitNumber + 500
     end
 end
