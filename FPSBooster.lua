@@ -112,7 +112,7 @@ local function ReturnDescendants()
     return Descendants
 end
 local function CheckIfBad(Instance)
-    if not Instance:IsDescendantOf(Players) --[[and not PartOfCharacter(Instance)]] and (_G.Settings.Players["Ignore Others"] and not PartOfCharacter(v) or not _G.Settings.Players["Ignore Others"]) and (_G.Settings.Players["Ignore Me"] and ME.Character and not v:IsDescendantOf(ME.Character) or not _G.Settings.Players["Ignore Me"]) then
+    if not Instance:IsDescendantOf(Players) --[[and not PartOfCharacter(Instance)]] and (_G.Settings.Players["Ignore Others"] and not PartOfCharacter(Instance) or not _G.Settings.Players["Ignore Others"]) and (_G.Settings.Players["Ignore Me"] and ME.Character and not Instance:IsDescendantOf(ME.Character) or not _G.Settings.Players["Ignore Me"]) then
         if Instance:IsA("DataModelMesh") then
             if _G.Settings.Meshes.LowDetail then
                 sethiddenproperty(Instance, "LODX", Enum.LevelOfDetailSetting.Low)
