@@ -17,11 +17,11 @@ if not _G.Settings then
         },
         Meshes = {
             Destroy = false,
-            LowDetail = true
+            LowDetail = true -- No Longer Used (Will be removed in future update)
         },
         Images = {
             Invisible = true,
-            LowDetail = false,
+            LowDetail = false, -- No Longer Used (Will be removed in future update)
             Destroy = false
         },
         Other = {
@@ -52,7 +52,21 @@ end
 local function ReturnDescendants()
     local Descendants = {}
     WaitNumber = 5000
-    if _G.Settings.Players["Ignore Others"] then
+    if _G.Settings.Players["Ignore Me"] and _G.Settings.Players["Ignore Others"] then
+        for i, v in pairs(game:GetDescendants()) do
+            if not v:IsDescendantOf(Players) and not PartOfCharacter(v) and not v:IsDescendantOf(ME.Character) then
+                for i2, v2 in pairs(BadInstances) do
+                    if v:IsA(v2) then
+                        table.insert(Descendants, v)
+                    end
+                end
+            end
+            if i == WaitNumber then
+                task.wait()
+                WaitNumber = WaitNumber + 5000
+            end
+        end
+    elseif _G.Settings.Players["Ignore Others"] then
         for i, v in pairs(game:GetDescendants()) do
             if not v:IsDescendantOf(Players) and not PartOfCharacter(v) then
                 for i2, v2 in pairs(BadInstances) do
@@ -69,20 +83,6 @@ local function ReturnDescendants()
     elseif _G.Settings.Players["Ignore Me"] then
         for i, v in pairs(game:GetDescendants()) do
             if not v:IsDescendantOf(Players) and not v:IsDescendantOf(ME.Character) then
-                for i2, v2 in pairs(BadInstances) do
-                    if v:IsA(v2) then
-                        table.insert(Descendants, v)
-                    end
-                end
-            end
-            if i == WaitNumber then
-                task.wait()
-                WaitNumber = WaitNumber + 5000
-            end
-        end
-    elseif _G.Settings.Players["Ignore Me"] and _G.Settings.Players["Ignore Others"] then
-        for i, v in pairs(game:GetDescendants()) do
-            if not v:IsDescendantOf(Players) and not PartOfCharacter(v) and not v:IsDescendantOf(ME.Character) then
                 for i2, v2 in pairs(BadInstances) do
                     if v:IsA(v2) then
                         table.insert(Descendants, v)
@@ -112,11 +112,11 @@ local function ReturnDescendants()
     return Descendants
 end
 local function CheckIfBad(Instance)
-    if not Instance:IsDescendantOf(Players) --[[and not PartOfCharacter(Instance)]] and (_G.Settings.Players["Ignore Others"] and not PartOfCharacter(Instance) or not _G.Settings.Players["Ignore Others"]) and (_G.Settings.Players["Ignore Me"] and ME.Character and not Instance:IsDescendantOf(ME.Character) or not _G.Settings.Players["Ignore Me"]) then
+    if not Instance:IsDescendantOf(Players) and (_G.Settings.Players["Ignore Others"] and not PartOfCharacter(Instance) or not _G.Settings.Players["Ignore Others"]) and (_G.Settings.Players["Ignore Me"] and ME.Character and not Instance:IsDescendantOf(ME.Character) or not _G.Settings.Players["Ignore Me"]) --[[not PartOfCharacter(Instance)]] then
         if Instance:IsA("DataModelMesh") then
             if _G.Settings.Meshes.LowDetail then
-                sethiddenproperty(Instance, "LODX", Enum.LevelOfDetailSetting.Low)
-                sethiddenproperty(Instance, "LODY", Enum.LevelOfDetailSetting.Low)
+                --sethiddenproperty(Instance, "LODX", Enum.LevelOfDetailSetting.Low)
+                --sethiddenproperty(Instance, "LODY", Enum.LevelOfDetailSetting.Low)
             elseif _G.Settings.Meshes.Destroy then
                 Instance:Destroy()
             end
