@@ -1,10 +1,10 @@
 -- MADE BY RIP#6666
 -- send issues or suggestions to my discord: discord.gg/rips
-
+--[[
 _G.WaitPerAmount = 500 -- Set Higher or Lower depending on your computer's performance
 _G.SendNotifications = true -- Set to false if you don't want notifications
 _G.ConsoleLogs = false -- Set to true if you want console logs (mainly for debugging)
-
+]]
 
 
 
