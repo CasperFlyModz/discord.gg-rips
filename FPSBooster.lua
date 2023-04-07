@@ -47,7 +47,7 @@ if not _G.Settings then
             Destroy = false
         },
         TextLabels = {
-            LowerQuality = true,
+            LowerQuality = false,
             Invisible = false,
             Destroy = false
         },
@@ -93,9 +93,6 @@ end
 local function CheckIfBad(Instance)
     if not Instance:IsDescendantOf(Players) and (_G.Settings.Players["Ignore Others"] and not PartOfCharacter(Instance) or not _G.Settings.Players["Ignore Others"]) and (_G.Settings.Players["Ignore Me"] and ME.Character and not Instance:IsDescendantOf(ME.Character) or not _G.Settings.Players["Ignore Me"]) and (_G.Settings.Players["Ignore Tools"] and not Instance:IsA("BackpackItem") and not Instance:FindFirstAncestorWhichIsA("BackpackItem") or not _G.Settings.Players["Ignore Tools"])--[[not PartOfCharacter(Instance)]] and (_G.Ignore and not table.find(_G.Ignore, Instance) and not DescendantOfIgnore(Instance) or (not _G.Ignore or type(_G.Ignore) ~= "table" or #_G.Ignore <= 0)) then
         if Instance:IsA("DataModelMesh") then
-            --[[if _G.Settings.Meshes.LowDetail then
-                sethiddenproperty(Instance, "LODX", Enum.LevelOfDetailSetting.Low)
-                sethiddenproperty(Instance, "LODY", Enum.LevelOfDetailSetting.Low)]] -- Deprecated
             if _G.Settings.Meshes.NoMesh and Instance:IsA("SpecialMesh") then
                 Instance.MeshId = ""
             end
@@ -124,10 +121,10 @@ local function CheckIfBad(Instance)
                 Instance:Destroy()
             end
         elseif table.find(CanBeEnabled, Instance.ClassName) then
-            if _G.Settings["Invisible Particles"] or (_G.Settings.Other and _G.Settings.Other["Invisible Particles"]) or (_G.Settings.Particles and _G.Settings.Particles.Invisible) then
+            if _G.Settings["Invisible Particles"] or _G.Settings["No Particles"] or (_G.Settings.Other and _G.Settings.Other["Invisible Particles"]) or (_G.Settings.Particles and _G.Settings.Particles.Invisible) then
                 Instance.Enabled = false
             end
-            if _G.Settings["No Particles"] or (_G.Settings.Other and _G.Settings.Other["No Particles"]) or (_G.Settings.Particles and _G.Settings.Particles.Destroy) then
+            if (_G.Settings.Other and _G.Settings.Other["No Particles"]) or (_G.Settings.Particles and _G.Settings.Particles.Destroy) then
                 Instance:Destroy()
             end
         elseif Instance:IsA("PostEffect") and (_G.Settings["No Camera Effects"] or (_G.Settings.Other and _G.Settings.Other["No Camera Effects"])) then
@@ -145,11 +142,7 @@ local function CheckIfBad(Instance)
             if _G.Settings["No Explosions"] or (_G.Settings.Other and _G.Settings.Other["No Explosions"]) or (_G.Settings.Explosions and _G.Settings.Explosions.Destroy) then
                 Instance:Destroy()
             end
-        elseif Instance:IsA("Clothing") then
-            if _G.Settings["No Clothes"] or (_G.Settings.Other and _G.Settings.Other["No Clothes"]) then
-                Instance:Destroy()
-            end
-        elseif Instance:IsA("SurfaceAppearance") or Instance:IsA("BaseWrap") then
+        elseif Instance:IsA("Clothing") or Instance:IsA("SurfaceAppearance") or Instance:IsA("BaseWrap") then
             if _G.Settings["No Clothes"] or (_G.Settings.Other and _G.Settings.Other["No Clothes"]) then
                 Instance:Destroy()
             end
