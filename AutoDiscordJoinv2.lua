@@ -1,6 +1,6 @@
 local Invite = {
 	Vanity = "rips",
-	SirHurt = "sirhurtv5"
+	SirHurt = "EAsrvtV4AB"
 }
 Invite.RIP = Invite.Vanity
 return Invite
