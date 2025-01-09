@@ -1,4 +1,4 @@
 local Invite = {
-	Vanity = "sirhurtv5"
+	Vanity = "EAsrvtV4AB"
 }
 return Invite
