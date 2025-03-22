@@ -28,6 +28,13 @@ local function convertToTimestamp(dateStr)
         sec = 0
     })
 end
+local function tablefind(tab, val)
+    for index, value in pairs(tab) do
+        if value == val then
+            return index
+        end
+    end
+end
 local function AddData(data)
     if data.IsRIPScript then
         data.Script = "https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/" .. data.Script .. ".lua"
