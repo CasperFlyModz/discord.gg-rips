@@ -55,7 +55,7 @@ local function AddData(data)
     else
         data.Globals = ""
     end
-    if not table.find(data.Aliases, data.Name) then
+    if not tablefind(data.Aliases, data.Name) then
         table.insert(data.Aliases, data.Name)
     end
     if data.UniverseId and type(data.UniverseId) == "number" then
@@ -106,7 +106,7 @@ local function AddPlayerCountData()
         end
         for _, gameData in ipairs(responseData.data) do
             for _, v in ipairs(gamedata.data) do
-                if not v.Universal and v.UniverseId and table.find(v.UniverseId, gameData.id) then
+                if not v.Universal and v.UniverseId and tablefind(v.UniverseId, gameData.id) then
                     v.PlayerCount = gameData.playing
                     v.RootPlaceId = gameData.rootPlaceId
                 end
@@ -131,7 +131,7 @@ gamedata.SortData = function(SortBy) -- Name or PlayerCount or CreationDate or L
         if a.Universal and b.Universal then
             return false
         end
-        if table.find({"CreationDate", "LastUpdate", "PlayerCount"}, SortBy) then
+        if tablefind({"CreationDate", "LastUpdate", "PlayerCount"}, SortBy) then
             if OrderByDef == "Ascending" then
                 return a[SortBy] < b[SortBy]
             else
