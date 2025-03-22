@@ -101,6 +101,7 @@ local function AddPlayerCountData()
             for _, v in ipairs(gamedata.data) do
                 if not v.Universal and v.UniverseId and table.find(v.UniverseId, gameData.id) then
                     v.PlayerCount = gameData.playing
+                    v.RootPlaceId = gameData.rootPlaceId
                 end
             end
         end
@@ -1446,5 +1447,5 @@ AddData({
     UniverseId = {16680835}
 }) -- 4
 
-gamedata.SortData(SortByDef)
+--gamedata.SortData(SortByDef)
 return gamedata
