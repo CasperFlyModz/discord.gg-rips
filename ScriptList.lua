@@ -1404,6 +1404,18 @@ AddData({
     Script = "Lootify",
     UniverseId = {5682590751}
 }) -- 14
+AddData({
+    Name = "Dig to Earth's CORE!",
+    Description = "The best script for Dig to Earth's CORE! with Auto Win, Infinite Money, Infinite Gems, and more.",
+    Author = 707437275776155669,
+    Version = "V3",
+    CreationDate = "5/15/2025 2:00PM",
+    LastUpdate = nil,
+    IsRIPScript = false,
+    Script = "https://raw.githubusercontent.com/Iamvfvo/discord.gg-rips/main/DigToEarthsCore.lua",
+    UniverseId = {7468338447},
+    Aliases = {"Dig to Earths CORE"}
+}) -- 15
 
 
 
