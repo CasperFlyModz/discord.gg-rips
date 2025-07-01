@@ -160,7 +160,7 @@ AddData({
     Version = "Booster",
     CreationDate = "4/21/2022 10:54PM",
     LastUpdate = "3/17/2023 10:13AM",
-    IsRIPScript = false,
+    IsRIPScript = true,
     Script = "FPSBooster",
     Universal = true,
     ImageId = "rbxassetid://10734934585"
